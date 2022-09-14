@@ -10,11 +10,14 @@ import { createStore} from 'vuex'
 // import user from './modules/user'
 // import products from './modules/products'
 
+import  cart from './modules/cart/index'
+
 const store = createStore({
-        // modules:{
+         modules:{
+                cart
         //         userName :  user,
         //         products
-        // }
+         }
 
 })
 

@@ -8,6 +8,9 @@
                 <li class="breadcrumb-item"><a href=""><span class="">صفحه اصلی</span></a></li>
                 <li class="breadcrumb-item"><a href=""><span class="">فهرست محصولات</span></a></li>
                 <li class="breadcrumb-item"><a href=""><span class="">محصول شماره یک</span></a></li>
+
+
+                
             </ul>
             <div class="bg-white border-radius-3 shadow-sm padding-30">
                 <div class="product-header">
@@ -108,7 +111,7 @@
                         </div>
 
                         <div class="product-left-container__info">
-                            <div class="product__left">
+                            <div class="product__left p-5">
                                 <div class="product__category">دسته وب</div>
                                 <div class="product__info">
                                         <h1 class="product__title">محصول 
@@ -143,7 +146,17 @@
                                 </div>
 
 
+                           <!--  اضافه کردن به سبد خرید-->
+
+                           <div class="btn-add-product" >
+                           <button 
+                           @click="addItem(product)"
+                           
+                           class="btn btn--boxshadow btn--brand "> اضافه کردن به سبد خرید
+                           </button>
+                           </div>
                            <!--  -->
+                           
 
 
 
@@ -251,7 +264,8 @@ import Comments from '../components/productTab/Comments.vue'
 import moment from 'moment'
 import jalaali from 'moment-jalaali'
 import {SET_PRODUCTS_MUTATIONS } from '@/store/modules/products/type'
-import {mapMutations} from 'vuex'  
+
+import {mapMutations,mapState,mapActions} from 'vuex'  
 
 // import products from '@/store/modules/products'
 
@@ -262,7 +276,6 @@ export default {
 
     name:"Product",
     components: {
-
         SwiperSlider,
         Details,
         Fields,
@@ -271,7 +284,6 @@ export default {
 
     data:()=>({
             dateNow_Jalaali:jalaali().format('jYYYY/jM/jD'),
-
            
             dataCountDown:moment('2022-08-20 00:00:00'),   
             diffDay:null,
@@ -326,7 +338,8 @@ export default {
 
 
   async  created(){
-       
+
+
        // this.$store.registerModule('products', products)
 
         //    if (!this.$store.hasModule('userName')) {
@@ -377,6 +390,13 @@ export default {
     destroyed(){
         clearInterval(this.timeInterval)
     },
+    computed:{
+       
+        ...mapState('cart',['items'])
+        
+       
+
+    } ,
 
     methods:{
         move(n){
@@ -411,13 +431,29 @@ export default {
            
         this.showRate = true
         },
-        ...mapMutations('products',[SET_PRODUCTS_MUTATIONS])  
-    
+       
+        ...mapMutations('products',[SET_PRODUCTS_MUTATIONS]),
 
-  },
+        ...mapActions('cart',['addItem'])
+
+        
+
+    },
 }
 </script>
 
 <style>
+.product__left{
+    text-align: right;
+    padding: 16px;
+}
+.product__left{
+    text-align: right;
+    padding: 16px;
+}
+.btn-add-product button {
+    padding:10px 16px;
+    font-family: Vazirmatn, Verdana, Geneva, Tahoma, sans-serif;
+}
 
 </style>

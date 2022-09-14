@@ -282,7 +282,7 @@ ul li {
 
 .header__dropdown-content--overflow {
     overflow-y: auto;
-    height: 400px;
+    height:auto;
 }
 
 .header__dropdown--is-active {
@@ -500,7 +500,10 @@ ul li {
 }
 
 .slideshow__prev {
-    left: 0
+    left: 0;
+}
+.slideshow__next {
+    right: 0;
 }
 
 .slideshow:hover .slideshow__prev {
@@ -3683,6 +3686,7 @@ input[type="checkbox"]:checked + .c-ui-statusswitcher__slider span {
 .cart-amounts {
     width: 100%;
     max-width: 30%;
+   
 }
 
 .cart--amounts {
@@ -3719,6 +3723,7 @@ input[type="checkbox"]:checked + .c-ui-statusswitcher__slider span {
     font-size: 13px;
     border-radius: 3px;
     font-family: Vazirmatn, Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
 }
 .cart-subtotal{
     width: 14%;
@@ -3733,10 +3738,15 @@ input[type="checkbox"]:checked + .c-ui-statusswitcher__slider span {
     height: 100%;
     padding-right: 30px;
     border-right: 1px solid #f0f0f5;
+    font-family: Vazirmatn, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
 }
 .cart-item-subtotal-title {
     font-size: 18px;
+  
     font-family: Vazirmatn, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
 }
 .cart-coupons-code-group input{
     border-top-right-radius: 3px;

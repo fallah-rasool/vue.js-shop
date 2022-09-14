@@ -1,9 +1,10 @@
 <template>
 
 <footer class="footer">
-
     <span class="scroll__top"  @click="goTop" v-show="showScrollTop"
-     style="display: block;"></span>
+    style="display: block;"></span>
+
+   
 
     <div class="footer__top">
         <div class="container">
@@ -49,10 +50,10 @@
             <a href="" class="footer__copy"> </a>
         </div>
     </div>
-<div class="overlay " :class="{'overlay--is-active':showSidbar}"></div>
+
 </footer>
 
-
+<div class="overlay " :class="{'overlay--is-active':showSidbar}"></div>
 </template>
 
 <script>

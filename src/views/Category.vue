@@ -176,7 +176,7 @@
                  <!-- <h1>{{ user}}</h1>   -->
                 <!-- <h1>{{ useraccout.name }}</h1> -->
                    <!-- <h1>{{ userName }}</h1> -->
-                   <h1>{{ name }}</h1>
+                   
 
                   
 
